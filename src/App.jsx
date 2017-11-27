@@ -4,23 +4,13 @@ import './App.css';
 
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
+
 import { withStyles } from 'material-ui/styles';
-
-import Drawer from 'material-ui/Drawer';
-import AppBar from 'material-ui/AppBar';
-import Toolbar from 'material-ui/Toolbar';
-import List, { ListItem, ListItemText, ListItemIcon } from 'material-ui/List';
-import { MenuItem } from 'material-ui/Menu';
-import TextField from 'material-ui/TextField';
 import Typography from 'material-ui/Typography';
-import Divider from 'material-ui/Divider';
-import InboxIcon from 'material-ui-icons/Inbox';
 
-import SideNav from './SideNav';
-import SideList from './SideList';
-import MTGCard from './MTGCard';
 import Header from './Header';
-import Constants from './Constants';
+import SideNav from './SideNav';
+import MTGCard from './MTGCard';
 
 const styles = theme => ({
   root: {
@@ -32,12 +22,6 @@ const styles = theme => ({
     width: '100%',
     height: '100%',
   },
-  drawerPaper: {
-    position: 'relative',
-    height: '100%',
-    width: Constants.DrawerWidth,
-  },
-  drawerHeader: theme.mixins.toolbar,
   content: {
     backgroundColor: theme.palette.background.default,
     width: '100%',
@@ -47,9 +31,6 @@ const styles = theme => ({
       
     },
   },
-  list: {
-    background: theme.palette.background.paper,
-  }
 });
 
 class Main extends Component {
@@ -62,9 +43,7 @@ class Main extends Component {
         <SideNav />
 
         <main className={classes.content}>
-          <Typography type="body1">
-            <MTGCard />
-          </Typography>
+          <MTGCard />          
         </main>
       </div>      
     );

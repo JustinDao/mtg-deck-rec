@@ -53,57 +53,55 @@ class MTGCard extends Component {
     const { classes } = this.props;
 
     return (
-      <div>
-        <Card className={classes.card}>
-          <CardMedia
-            className={classes.media}
-            image="/cryptic_command.jpg"
-            title="Cryptic Command"
-          />
-          <CardActions className={
-            classnames(
-              classes.actions,
-              {
-                [classes.hidden]: !this.state.showInfoButton,
-              }
-            )
-          }>
-            <IconButton
-              className={
-                classnames(
-                  classes.expand,
-                  {
-                    [classes.expandOpen]: this.state.expanded,
-                  }
-                )
-              }
-              onClick={this.handleExpandClick}
-              aria-expanded={this.state.expanded}
-              aria-label="Show more" >
-              <ExpandMoreIcon />
-            </IconButton>
-          </CardActions>
-          <Collapse in={this.state.expanded} transitionDuration="auto" unmountOnExit>
-            <CardContent>
-              <Typography type="headline" component="h2">
-                Cryptic Command
-              </Typography>
-              <Typography type="caption" component="h2">
-                IMA
-              </Typography>
-              <Typography component="p">
-                <span>Choose two -</span>
-                <ul>
-                  <li>Counter target spell.</li>
-                  <li>Return target permanent to its owner's hand.</li>
-                  <li>Tap all creatures your opponents control.</li>
-                  <li>Draw a card.</li>
-                </ul>
-              </Typography>
-            </CardContent>
-          </Collapse>          
-        </Card>
-      </div>
+      <Card className={classes.card}>
+        <CardMedia
+          className={classes.media}
+          image="/cryptic_command.jpg"
+          title="Cryptic Command"
+        />
+        <CardActions className={
+          classnames(
+            classes.actions,
+            {
+              [classes.hidden]: !this.state.showInfoButton,
+            }
+          )
+        }>
+          <IconButton
+            className={
+              classnames(
+                classes.expand,
+                {
+                  [classes.expandOpen]: this.state.expanded,
+                }
+              )
+            }
+            onClick={this.handleExpandClick}
+            aria-expanded={this.state.expanded}
+            aria-label="Show more" >
+            <ExpandMoreIcon />
+          </IconButton>
+        </CardActions>
+        <Collapse in={this.state.expanded} transitionDuration="auto" unmountOnExit>
+          <CardContent>
+            <Typography type="headline" component="h2">
+              Cryptic Command
+            </Typography>
+            <Typography type="caption" component="h2">
+              IMA
+            </Typography>
+            <Typography component="div">
+              <span>Choose two -</span>
+              <ul>
+                <li>Counter target spell.</li>
+                <li>Return target permanent to its owner's hand.</li>
+                <li>Tap all creatures your opponents control.</li>
+                <li>Draw a card.</li>
+              </ul>
+            </Typography>
+          </CardContent>
+        </Collapse>          
+      </Card>
     );
   }
 }
